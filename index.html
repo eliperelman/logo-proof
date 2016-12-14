@@ -23,41 +23,43 @@
 
     #container section {
       flex: 1;
-      min-width: 25%;
+      min-width: calc(100% / 3);
       min-height: 25%;
       background-color: #ddd;
     }
 
-    #container section:nth-child(01) { background-color: hsl(000, 000%, 100%); }
-    #container section:nth-child(02) { background-color: hsl(000, 000%, 066%); }
-    #container section:nth-child(03) { background-color: hsl(000, 000%, 033%); }
-    #container section:nth-child(04) { background-color: hsl(000, 000%, 000%); }
+    #container section:nth-child(01) { background-color: #ffffff; }
+    #container section:nth-child(02) { background-color: #aeaeae; }
+    #container section:nth-child(03) { background-color: #5e5e5e; }
+    #container section:nth-child(04) { background-color: #000000; }
 
-    #container section:nth-child(05) { background-color: hsl(353, 083%, 086%); }
-    #container section:nth-child(06) { background-color: hsl(353, 083%, 074%); }
-    #container section:nth-child(07) { background-color: hsl(353, 083%, 061%); }
-    #container section:nth-child(08) { background-color: hsl(353, 083%, 048%); }
+    #container section:nth-child(05) { background-color: #ffeda7; }
+    #container section:nth-child(06) { background-color: #ffcb00; }
+    #container section:nth-child(07) { background-color: #ff9500; }
+    #container section:nth-child(08) { background-color: #e66000; }
 
-    #container section:nth-child(09) { background-color: hsl(040, 019%, 082%); }
-    #container section:nth-child(10) { background-color: hsl(040, 019%, 061%); }
-    #container section:nth-child(11) { background-color: hsl(040, 019%, 040%); }
-    #container section:nth-child(12) { background-color: hsl(040, 019%, 019%); }
-
-    #container section:nth-child(13) { background-color: hsl(218, 100%, 082%); }
-    #container section:nth-child(14) { background-color: hsl(218, 100%, 064%); }
-    #container section:nth-child(15) { background-color: hsl(218, 100%, 046%); }
-    #container section:nth-child(16) { background-color: hsl(218, 100%, 028%); }
+    #container section:nth-child(09) { background-color: #80d6ff; }
+    #container section:nth-child(10) { background-color: #0095dd; }
+    #container section:nth-child(11) { background-color: #00539f; }
+    #container section:nth-child(12) { background-color: #002147; }
 
     #container section div, #large-light, #large-dark, #large-box {
       cursor: pointer;
-      margin-top: 2.5%;
-      margin-left: 5%;
-      height: 90%;
-      width: 90%;
+      margin-top: 5%;
+      margin-left: 12.5%;
+      height: 75%;
+      width: 75%;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       transition: background-image 0.03s ease-in;
+    }
+
+    #large-light, #large-dark, #large-box {
+      margin-top: 12.5%;
+      margin-left: 12.5%;
+      height: 75%;
+      width: 75%;
     }
 
     #container section .light, #large-light {
@@ -96,19 +98,15 @@
   </div>
   <div id="container">
     <section><div class="dark"></div></section>
-    <section><div class="dark"></div></section>
     <section><div class="light"></div></section>
-    <section><div class="light"></div></section>
-    <section><div class="dark"></div></section>
-    <section><div class="dark"></div></section>
     <section><div class="light"></div></section>
     <section><div class="light"></div></section>
     <section><div class="dark"></div></section>
-    <section><div class="dark"></div></section>
     <section><div class="light"></div></section>
     <section><div class="light"></div></section>
+    <section><div class="light"></div></section>
     <section><div class="dark"></div></section>
-    <section><div class="dark"></div></section>
+    <section><div class="light"></div></section>
     <section><div class="light"></div></section>
     <section><div class="light"></div></section>
   </div>
