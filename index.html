@@ -10,6 +10,10 @@
       margin: 0;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     #container {
       width: 100vw;
       height: 100vh;
@@ -44,7 +48,7 @@
     #container section:nth-child(15) { background-color: hsl(218, 100%, 046%); }
     #container section:nth-child(16) { background-color: hsl(218, 100%, 028%); }
 
-    #container section div {
+    #container section div, #large-light, #large-dark, #large-box {
       cursor: pointer;
       margin-top: 2.5%;
       margin-left: 5%;
@@ -53,39 +57,90 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      transition: background-image 0.03s ease-in;
     }
 
-    #container section .light {
+    #container section .light, #large-light {
       background-image: url(logo-light.png);
     }
 
-    #container section .dark {
+    #container section .dark, #large-dark {
       background-image: url(logo-dark.png);
     }
 
-    #container section .light:hover, #container section .dark:hover {
+    #container section .light:hover, #container section .dark:hover, #large-box {
       background-image: url(boxes.png);
+    }
+
+    #large-proof {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-flow: row no-wrap;
+    }
+
+    #large-proof section {
+      flex: 1;
+      min-width: 50%;
+      min-height: 100%;
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <section><div class="dark" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="light" /></section>
-    <section><div class="light" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="light" /></section>
-    <section><div class="light" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="light" /></section>
-    <section><div class="light" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="dark" /></section>
-    <section><div class="light" /></section>
-    <section><div class="light" /></section>
+  <div id="large-proof" hidden>
+    <section>
+      <div id="large-dark" hidden></div>
+      <div id="large-light" hidden></div>
+    </section>
+    <section><div id="large-box"></div></section>
   </div>
+  <div id="container">
+    <section><div class="dark"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="dark"></div></section>
+    <section><div class="light"></div></section>
+    <section><div class="light"></div></section>
+  </div>
+  <script>
+    (() => {
+      const proof = document.getElementById('large-proof');
+      const dark = document.getElementById('large-dark');
+      const light = document.getElementById('large-light');
+      const container = document.getElementById('container');
+
+      Array.from(document.querySelectorAll('.light, .dark')).map(el => {
+        el.addEventListener('click', e => {
+          if (el.classList.contains('dark')) {
+            light.setAttribute('hidden', 'hidden');
+            dark.removeAttribute('hidden');
+          } else {
+            dark.setAttribute('hidden', 'hidden');
+            light.removeAttribute('hidden');
+          }
+
+          proof.style.backgroundColor = window.getComputedStyle(el.parentNode).backgroundColor;
+
+          container.setAttribute('hidden', 'hidden');
+          proof.removeAttribute('hidden');
+        });
+      });
+
+      proof.addEventListener('click', () => {
+        proof.setAttribute('hidden', 'hidden');
+        container.removeAttribute('hidden');
+      });
+    })();
+  </script>
 </body>
 </html>
