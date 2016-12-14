@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    html, body {
+      background-color: #fff;
+      height: 100vh;
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    #container section {
+      flex: 1;
+      min-width: 25%;
+      min-height: 25%;
+      background-color: #ddd;
+    }
+
+    #container section:nth-child(01) { background-color: hsl(000, 000%, 100%); }
+    #container section:nth-child(02) { background-color: hsl(000, 000%, 066%); }
+    #container section:nth-child(03) { background-color: hsl(000, 000%, 033%); }
+    #container section:nth-child(04) { background-color: hsl(000, 000%, 000%); }
+
+    #container section:nth-child(05) { background-color: hsl(353, 083%, 086%); }
+    #container section:nth-child(06) { background-color: hsl(353, 083%, 074%); }
+    #container section:nth-child(07) { background-color: hsl(353, 083%, 061%); }
+    #container section:nth-child(08) { background-color: hsl(353, 083%, 048%); }
+
+    #container section:nth-child(09) { background-color: hsl(040, 019%, 082%); }
+    #container section:nth-child(10) { background-color: hsl(040, 019%, 061%); }
+    #container section:nth-child(11) { background-color: hsl(040, 019%, 040%); }
+    #container section:nth-child(12) { background-color: hsl(040, 019%, 019%); }
+
+    #container section:nth-child(13) { background-color: hsl(218, 100%, 082%); }
+    #container section:nth-child(14) { background-color: hsl(218, 100%, 064%); }
+    #container section:nth-child(15) { background-color: hsl(218, 100%, 046%); }
+    #container section:nth-child(16) { background-color: hsl(218, 100%, 028%); }
+
+    #container section div {
+      cursor: pointer;
+      margin-top: 2.5%;
+      margin-left: 5%;
+      height: 90%;
+      width: 90%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #container section .light {
+      background-image: url(logo-light.png);
+    }
+
+    #container section .dark {
+      background-image: url(logo-dark.png);
+    }
+
+    #container section .light:hover, #container section .dark:hover {
+      background-image: url(boxes.png);
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <section><div class="dark" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="light" /></section>
+    <section><div class="light" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="light" /></section>
+    <section><div class="light" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="light" /></section>
+    <section><div class="light" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="dark" /></section>
+    <section><div class="light" /></section>
+    <section><div class="light" /></section>
+  </div>
+</body>
+</html>
