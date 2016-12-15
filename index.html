@@ -22,7 +22,8 @@
     }
 
     #container section {
-      flex: 1;
+      display: flex;
+      flex: 1 0 auto;
       min-width: calc(100% / 3);
       min-height: 25%;
       background-color: #ddd;
@@ -44,11 +45,10 @@
     #container section:nth-child(12) { background-color: #002147; }
 
     #container section div, #large-light, #large-dark, #large-box {
+      display: flex;
       cursor: pointer;
-      margin-top: 5%;
-      margin-left: 12.5%;
-      height: 75%;
-      width: 75%;
+      width: 100%;
+      margin: 20px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
