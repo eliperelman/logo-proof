@@ -1,0 +1,25 @@
+language: node_js
+sudo: false
+cache:
+  apt: true
+  directories:
+    - $HOME/.npm
+    - $HOME/.yarn-cache
+    - node_modules
+node_js:
+  - '6'
+  - '7'
+before_install:
+  - npm install --global yarn --cache-min 999999999
+install:
+  - yarn
+script:
+  - yarn test && echo "$TRAVIS_COMMIT" && echo "$TRAVIS_PULL_REQUEST"
+after_script:
+  - # node_modules/.bin/now-travis
+branches:
+  only:
+    - master
+env:
+  global:
+    secure: VPP6Y3Sgqj1dzzV3tyz57mlGMlF9LgGgSccmaXPoZRPRqfZbccMNgk3LjL+tnK9o2Irg3yYNCxi2QA4xWK3miZSfa6+t+86R6iG3N8HUUNPnrK8jVk4RGm/IIwPy71LYxKcoKXd+LeuVwkKhyhW0DK2UlpzGyWreZ/vHuxarNkJWnZX4LzG87ruNcj9zed19oKy2/iFTzVvCp+2ViFVcMgrripMBaoaHk3YPC3djPlvHBuvqWdsWM/QAQT8VgHPs+5nDFld6I0Gu/QbQP4n9x4cWVW0mIcSguskaHgHWrRQJm9pe6/+4R2q551IZ8h98UdcWcrHF7t81nqHtwWW/rBkmqPxxhkcgvE069vLwqx1w+pkWVGVvgwkGmSrQNXf5yCcg0DYwFHdRUWRlz4iKrNP3Fu3qhy14/S0QuBOXkqOeEGL53AExH1pR+hIf/iFYxGnmhUqe8/net5/OOaR0rIdy5VgukLmeze32NAxeFGgqsjG+9dxpGn4sajkE6GqTKziIJhNMfvBaQMs1PEVAYnOy5V5s0XNy47sRmYMEZplh4qWtyVEIIi2K+gz8j1VXEVVULT8t5fpRAg1pY/UhxWXmDfbFlz9jI9xDciEfpfbdATJgVgbVpMPaAmgtwauwapFiJKRwRIFzJBFN8alPLdx9sbKiffiieE0rbHSQeEI=

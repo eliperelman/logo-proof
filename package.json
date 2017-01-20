@@ -1,0 +1,19 @@
+{
+  "name": "logo-proof",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:eliperelman/logo-proof.git",
+  "author": "Eli Perelman <eli@eliperelman.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo 'success'",
+    "now-start": "serve"
+  },
+  "dependencies": {
+    "serve": "^2.4.3"
+  },
+  "devDependencies": {
+    "now-travis": "1.0.0-beta13"
+  }
+}
